@@ -288,7 +288,13 @@ function counterMaker() {
 function counterMakerWithLimit(max) {
   let count = 0;
   function counter() {
-    
+    if (max < count) {
+      count = 0;
+      return count++;
+    } else {
+      return count++;
+    }
+  }
   return counter;
 }
 
