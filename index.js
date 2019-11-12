@@ -186,7 +186,9 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
   const names = [];
-  runners.forEach(runner => names.push(`${runner.last_name}, ${runner.first_name}`));
+  runners.forEach(function(runner){
+    names.push(`${runner.last_name}, ${runner.first_name}`)
+  });
   return names;
 }
 
@@ -203,7 +205,9 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  const upperCased = runners.map(runner => runner.first_name.toUpperCase());
+  const upperCased = runners.map(function(runner) {
+    return runner.first_name.toUpperCase();
+  });
   return upperCased;
 }
 
